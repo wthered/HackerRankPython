@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="aluminium@10.42.0.13">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="aluminium">
+      <ObjectId>16387</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>13205</ObjectId>
+    </database>
+    <role id="4" parent="1" name="ntina23gr">
+      <ObjectId>16385</ObjectId>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="5" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="11" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-03-09.19:15:32.071</IntrospectionTimestamp>
+      <Current>1</Current>
+    </schema>
+    <schema id="12" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="information_schema">
+      <ObjectId>12914</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="movies">
+      <ObjectId>16388</ObjectId>
+      <IntrospectionTimestamp>2018-03-09.19:17:03.269</IntrospectionTimestamp>
+      <IntrospectionStateNumber>43674</IntrospectionStateNumber>
+      <Visible>1</Visible>
+    </schema>
+    <sequence id="18" parent="17" name="genres_genreid_seq">
+      <ObjectId>16550</ObjectId>
+      <StateNumber>43674</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="19" parent="17" name="userinfo_id_seq">
+      <ObjectId>16429</ObjectId>
+      <StateNumber>577</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="20" parent="17" name="credentials">
+      <ObjectId>16417</ObjectId>
+      <StateNumber>43672</StateNumber>
+    </table>
+    <table id="21" parent="17" name="domains">
+      <ObjectId>16467</ObjectId>
+      <StateNumber>13600</StateNumber>
+    </table>
+    <table id="22" parent="17" name="forename">
+      <ObjectId>16455</ObjectId>
+      <StateNumber>13600</StateNumber>
+    </table>
+    <table id="23" parent="17" name="genres">
+      <ObjectId>16552</ObjectId>
+      <StateNumber>43674</StateNumber>
+    </table>
+    <table id="24" parent="17" name="lastname">
+      <ObjectId>16461</ObjectId>
+      <StateNumber>13600</StateNumber>
+    </table>
+    <table id="25" parent="17" name="sessions">
+      <ObjectId>16477</ObjectId>
+      <StateNumber>43672</StateNumber>
+    </table>
+    <table id="26" parent="17" name="userinfo">
+      <ObjectId>16431</ObjectId>
+      <StateNumber>13600</StateNumber>
+    </table>
+    <column id="27" parent="20" name="username">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>574</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="28" parent="20" name="usermail">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>574</StateNumber>
+      <DefaultExpression>&apos;user@host.net&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="29" parent="20" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>574</StateNumber>
+      <DefaultExpression>&apos;7d793037a0760186574b0282f2f435e7&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="20" name="usersalt">
+      <Position>4</Position>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>574</StateNumber>
+      <DefaultExpression>&apos;5d41402abc4b2a76b9719d911017c592&apos;::bpchar</DefaultExpression>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="31" parent="20" name="verified">
+      <Position>5</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>574</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="32" parent="20" name="credentials_pkey">
+      <ObjectId>16427</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="20" name="credentials_pkey">
+      <ObjectId>16428</ObjectId>
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>credentials_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="21" name="website">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>589</StateNumber>
+      <DefaultExpression>&apos;company.com&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="35" parent="21" name="ip">
+      <Position>2</Position>
+      <DataType>cidr|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>589</StateNumber>
+      <DefaultExpression>&apos;155.207.123.3/32&apos;::cidr</DefaultExpression>
+      <TypeId>650</TypeId>
+    </column>
+    <index id="36" parent="21" name="domains_pkey">
+      <ObjectId>16475</ObjectId>
+      <ColNames>website</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="21" name="domains_pkey">
+      <ObjectId>16476</ObjectId>
+      <ColNames>website</ColNames>
+      <UnderlyingIndexName>domains_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="22" name="first">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>587</StateNumber>
+      <DefaultExpression>&apos;John&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="39" parent="22" name="forename_pkey">
+      <ObjectId>16459</ObjectId>
+      <ColNames>first</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="22" name="forename_pkey">
+      <ObjectId>16460</ObjectId>
+      <ColNames>first</ColNames>
+      <UnderlyingIndexName>forename_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="23" name="genreid">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43674</StateNumber>
+      <DefaultExpression>nextval(&apos;movies.genres_genreid_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>movies.genres_genreid_seq</SequenceName>
+    </column>
+    <column id="42" parent="23" name="genre">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43674</StateNumber>
+      <DefaultExpression>&apos;Drama&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="43" parent="23" name="genres_pkey">
+      <ObjectId>16557</ObjectId>
+      <ColNames>genreid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="23" name="genres_pkey">
+      <ObjectId>16558</ObjectId>
+      <ColNames>genreid</ColNames>
+      <UnderlyingIndexName>genres_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="24" name="surname">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>588</StateNumber>
+      <DefaultExpression>&apos;Snow&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="46" parent="24" name="lastname_pkey">
+      <ObjectId>16465</ObjectId>
+      <ColNames>surname</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="24" name="lastname_pkey">
+      <ObjectId>16466</ObjectId>
+      <ColNames>surname</ColNames>
+      <UnderlyingIndexName>lastname_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13605</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="49" parent="25" name="username">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13605</StateNumber>
+      <DefaultExpression>&apos;ntina23gr&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="25" name="accessed">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13605</StateNumber>
+      <DefaultExpression>1552071233</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="51" parent="25" name="browser">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13605</StateNumber>
+      <DefaultExpression>&apos;Firefox Mozilla&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="52" parent="25" name="ip">
+      <Position>6</Position>
+      <DataType>cidr|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13605</StateNumber>
+      <DefaultExpression>&apos;155.207.123.3/32&apos;::cidr</DefaultExpression>
+      <TypeId>650</TypeId>
+    </column>
+    <column id="53" parent="25" name="userdata">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13605</StateNumber>
+      <DefaultExpression>&apos;{}&apos;::text</DefaultExpression>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="54" parent="25" name="sessions_pkey">
+      <ObjectId>16489</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="25" name="sessions_pkey">
+      <ObjectId>16490</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sessions_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="25" name="sessions_username_fk">
+      <ObjectId>16545</ObjectId>
+      <ColNames>username</ColNames>
+      <RefTableId>16417</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>credentials</RefTableName>
+      <RefKeyName>credentials_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="57" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>nextval(&apos;movies.userinfo_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>movies.userinfo_id_seq</SequenceName>
+    </column>
+    <column id="58" parent="26" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>&apos;maria25gr&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="26" name="forename">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>&apos;John&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="60" parent="26" name="lastname">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>&apos;Snow&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="61" parent="26" name="male">
+      <Position>5</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="62" parent="26" name="birth">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>1552071233</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="63" parent="26" name="joined">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>1552071233</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="64" parent="26" name="fav_genre">
+      <Position>8</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>577</StateNumber>
+      <DefaultExpression>1</DefaultExpression>
+      <TypeId>21</TypeId>
+    </column>
+    <foreign-key id="65" parent="26" name="userinfo_username_fk">
+      <ObjectId>16450</ObjectId>
+      <ColNames>username</ColNames>
+      <RefTableId>16417</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>credentials</RefTableName>
+      <RefKeyName>credentials_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+  </database-model>
+</dataSource>

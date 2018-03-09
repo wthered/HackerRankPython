@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Aluminium" traceLevel="DETAILS" uploadOnCheckin="7df6bcf5-f311-4ac8-8f7a-9a3001afaee1">
+    <serverData>
+      <paths name="Aluminium">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/hackerRank" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="Aluminium" />
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
