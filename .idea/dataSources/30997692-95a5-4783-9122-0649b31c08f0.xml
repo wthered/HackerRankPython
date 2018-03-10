@@ -74,14 +74,14 @@
     </schema>
     <schema id="17" parent="2" name="movies">
       <ObjectId>16388</ObjectId>
-      <IntrospectionTimestamp>2018-03-09.19:17:03.269</IntrospectionTimestamp>
-      <IntrospectionStateNumber>43674</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-03-10.13:18:27.981</IntrospectionTimestamp>
+      <IntrospectionStateNumber>52900</IntrospectionStateNumber>
       <Visible>1</Visible>
     </schema>
     <sequence id="18" parent="17" name="genres_genreid_seq">
       <ObjectId>16550</ObjectId>
-      <StateNumber>43674</StateNumber>
-      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <StateNumber>43706</StateNumber>
+      <SequenceIdentity>1..32</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -94,40 +94,44 @@
     </sequence>
     <table id="20" parent="17" name="credentials">
       <ObjectId>16417</ObjectId>
-      <StateNumber>43672</StateNumber>
+      <StateNumber>43772</StateNumber>
     </table>
-    <table id="21" parent="17" name="domains">
-      <ObjectId>16467</ObjectId>
-      <StateNumber>13600</StateNumber>
-    </table>
-    <table id="22" parent="17" name="forename">
-      <ObjectId>16455</ObjectId>
-      <StateNumber>13600</StateNumber>
-    </table>
-    <table id="23" parent="17" name="genres">
+    <table id="21" parent="17" name="genres">
       <ObjectId>16552</ObjectId>
-      <StateNumber>43674</StateNumber>
+      <StateNumber>43772</StateNumber>
     </table>
-    <table id="24" parent="17" name="lastname">
-      <ObjectId>16461</ObjectId>
-      <StateNumber>13600</StateNumber>
+    <table id="22" parent="17" name="links">
+      <ObjectId>16615</ObjectId>
+      <StateNumber>52895</StateNumber>
     </table>
-    <table id="25" parent="17" name="sessions">
+    <table id="23" parent="17" name="ratings">
+      <ObjectId>16630</ObjectId>
+      <StateNumber>52900</StateNumber>
+    </table>
+    <table id="24" parent="17" name="sessions">
       <ObjectId>16477</ObjectId>
-      <StateNumber>43672</StateNumber>
+      <StateNumber>43772</StateNumber>
     </table>
-    <table id="26" parent="17" name="userinfo">
+    <table id="25" parent="17" name="titles">
+      <ObjectId>16571</ObjectId>
+      <StateNumber>52900</StateNumber>
+    </table>
+    <table id="26" parent="17" name="titles_genres">
+      <ObjectId>16582</ObjectId>
+      <StateNumber>52894</StateNumber>
+    </table>
+    <table id="27" parent="17" name="userinfo">
       <ObjectId>16431</ObjectId>
-      <StateNumber>13600</StateNumber>
+      <StateNumber>43772</StateNumber>
     </table>
-    <column id="27" parent="20" name="username">
+    <column id="28" parent="20" name="username">
       <Position>1</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>574</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="28" parent="20" name="usermail">
+    <column id="29" parent="20" name="usermail">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
@@ -135,7 +139,7 @@
       <DefaultExpression>&apos;user@host.net&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <column id="29" parent="20" name="password">
+    <column id="30" parent="20" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
@@ -143,7 +147,7 @@
       <DefaultExpression>&apos;7d793037a0760186574b0282f2f435e7&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <column id="30" parent="20" name="usersalt">
+    <column id="31" parent="20" name="usersalt">
       <Position>4</Position>
       <DataType>char(32)|0</DataType>
       <NotNull>1</NotNull>
@@ -151,7 +155,7 @@
       <DefaultExpression>&apos;5d41402abc4b2a76b9719d911017c592&apos;::bpchar</DefaultExpression>
       <TypeId>1042</TypeId>
     </column>
-    <column id="31" parent="20" name="verified">
+    <column id="32" parent="20" name="verified">
       <Position>5</Position>
       <DataType>boolean|0</DataType>
       <NotNull>1</NotNull>
@@ -159,118 +163,153 @@
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
-    <index id="32" parent="20" name="credentials_pkey">
+    <index id="33" parent="20" name="credentials_pkey">
       <ObjectId>16427</ObjectId>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="33" parent="20" name="credentials_pkey">
+    <index id="34" parent="20" name="credentials_usermail_key">
+      <ObjectId>16569</ObjectId>
+      <ColNames>usermail</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="20" name="credentials_pkey">
       <ObjectId>16428</ObjectId>
       <ColNames>username</ColNames>
       <UnderlyingIndexName>credentials_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="34" parent="21" name="website">
-      <Position>1</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>589</StateNumber>
-      <DefaultExpression>&apos;company.com&apos;::character varying</DefaultExpression>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="35" parent="21" name="ip">
-      <Position>2</Position>
-      <DataType>cidr|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>589</StateNumber>
-      <DefaultExpression>&apos;155.207.123.3/32&apos;::cidr</DefaultExpression>
-      <TypeId>650</TypeId>
-    </column>
-    <index id="36" parent="21" name="domains_pkey">
-      <ObjectId>16475</ObjectId>
-      <ColNames>website</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="37" parent="21" name="domains_pkey">
-      <ObjectId>16476</ObjectId>
-      <ColNames>website</ColNames>
-      <UnderlyingIndexName>domains_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
+    <key id="36" parent="20" name="credentials_usermail_key">
+      <ObjectId>16570</ObjectId>
+      <ColNames>usermail</ColNames>
+      <UnderlyingIndexName>credentials_usermail_key</UnderlyingIndexName>
     </key>
-    <column id="38" parent="22" name="first">
+    <column id="37" parent="21" name="genre_id">
       <Position>1</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>smallint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>587</StateNumber>
-      <DefaultExpression>&apos;John&apos;::character varying</DefaultExpression>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="39" parent="22" name="forename_pkey">
-      <ObjectId>16459</ObjectId>
-      <ColNames>first</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="40" parent="22" name="forename_pkey">
-      <ObjectId>16460</ObjectId>
-      <ColNames>first</ColNames>
-      <UnderlyingIndexName>forename_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="41" parent="23" name="genreid">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>43674</StateNumber>
+      <StateNumber>43749</StateNumber>
       <DefaultExpression>nextval(&apos;movies.genres_genreid_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
+      <TypeId>21</TypeId>
       <SequenceName>movies.genres_genreid_seq</SequenceName>
     </column>
-    <column id="42" parent="23" name="genre">
+    <column id="38" parent="21" name="genre">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(16)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>43674</StateNumber>
+      <StateNumber>43752</StateNumber>
       <DefaultExpression>&apos;Drama&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <index id="43" parent="23" name="genres_pkey">
-      <ObjectId>16557</ObjectId>
-      <ColNames>genreid</ColNames>
+    <index id="39" parent="21" name="genres_pkey">
+      <ObjectId>16560</ObjectId>
+      <ColNames>genre_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="44" parent="23" name="genres_pkey">
-      <ObjectId>16558</ObjectId>
-      <ColNames>genreid</ColNames>
+    <key id="40" parent="21" name="genres_pkey">
+      <ObjectId>16561</ObjectId>
+      <ColNames>genre_id</ColNames>
       <UnderlyingIndexName>genres_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="45" parent="24" name="surname">
+    <column id="41" parent="22" name="title_id">
       <Position>1</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>588</StateNumber>
-      <DefaultExpression>&apos;Snow&apos;::character varying</DefaultExpression>
-      <TypeId>1043</TypeId>
+      <StateNumber>43779</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <index id="46" parent="24" name="lastname_pkey">
-      <ObjectId>16465</ObjectId>
-      <ColNames>surname</ColNames>
+    <column id="42" parent="22" name="imdb">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43779</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="43" parent="22" name="tmdb">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43779</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="44" parent="22" name="links_pkey">
+      <ObjectId>16620</ObjectId>
+      <ColNames>title_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="47" parent="24" name="lastname_pkey">
-      <ObjectId>16466</ObjectId>
-      <ColNames>surname</ColNames>
-      <UnderlyingIndexName>lastname_pkey</UnderlyingIndexName>
+    <key id="45" parent="22" name="links_pkey">
+      <ObjectId>16621</ObjectId>
+      <ColNames>title_id</ColNames>
+      <UnderlyingIndexName>links_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="25" name="id">
+    <column id="46" parent="23" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>52899</StateNumber>
+      <DefaultExpression>1</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="47" parent="23" name="title_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>52899</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="48" parent="23" name="rating">
+      <Position>3</Position>
+      <DataType>real|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>52899</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="49" parent="23" name="unixtime">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>52899</StateNumber>
+      <DefaultExpression>155207123</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="50" parent="23" name="ratings_pkey">
+      <ObjectId>16637</ObjectId>
+      <ColNames>user_id
+title_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="23" name="ratings_pkey">
+      <ObjectId>16638</ObjectId>
+      <ColNames>user_id
+title_id</ColNames>
+      <UnderlyingIndexName>ratings_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="23" name="ratings_title_id_fkey">
+      <ObjectId>16639</ObjectId>
+      <ColNames>title_id</ColNames>
+      <RefTableId>16571</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>titles</RefTableName>
+      <RefKeyName>titles_pkey</RefKeyName>
+      <RefColNames>title_id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="53" parent="24" name="id">
       <Position>1</Position>
       <DataType>char(32)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>13605</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="49" parent="25" name="username">
+    <column id="54" parent="24" name="username">
       <Position>2</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
@@ -278,7 +317,7 @@
       <DefaultExpression>&apos;ntina23gr&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <column id="50" parent="25" name="accessed">
+    <column id="55" parent="24" name="accessed">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -286,7 +325,7 @@
       <DefaultExpression>1552071233</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="51" parent="25" name="browser">
+    <column id="56" parent="24" name="browser">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
@@ -294,7 +333,7 @@
       <DefaultExpression>&apos;Firefox Mozilla&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <column id="52" parent="25" name="ip">
+    <column id="57" parent="24" name="ip">
       <Position>6</Position>
       <DataType>cidr|0</DataType>
       <NotNull>1</NotNull>
@@ -302,7 +341,7 @@
       <DefaultExpression>&apos;155.207.123.3/32&apos;::cidr</DefaultExpression>
       <TypeId>650</TypeId>
     </column>
-    <column id="53" parent="25" name="userdata">
+    <column id="58" parent="24" name="userdata">
       <Position>7</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
@@ -310,18 +349,18 @@
       <DefaultExpression>&apos;{}&apos;::text</DefaultExpression>
       <TypeId>25</TypeId>
     </column>
-    <index id="54" parent="25" name="sessions_pkey">
+    <index id="59" parent="24" name="sessions_pkey">
       <ObjectId>16489</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="55" parent="25" name="sessions_pkey">
+    <key id="60" parent="24" name="sessions_pkey">
       <ObjectId>16490</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>sessions_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="56" parent="25" name="sessions_username_fk">
+    <foreign-key id="61" parent="24" name="sessions_username_fk">
       <ObjectId>16545</ObjectId>
       <ColNames>username</ColNames>
       <RefTableId>16417</RefTableId>
@@ -332,16 +371,93 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="57" parent="26" name="id">
+    <column id="62" parent="25" name="title_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>577</StateNumber>
+      <StateNumber>43746</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="63" parent="25" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43746</StateNumber>
+      <DefaultExpression>&apos;Anonymous Movie&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="64" parent="25" name="year">
+      <Position>3</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43746</StateNumber>
+      <DefaultExpression>1970</DefaultExpression>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="65" parent="25" name="plot">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43755</StateNumber>
+      <DefaultExpression>&apos;lorem ipsum dolor default movie plot&apos;::text</DefaultExpression>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="66" parent="25" name="poster">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43746</StateNumber>
+      <DefaultExpression>&apos;https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="67" parent="25" name="titles_pkey">
+      <ObjectId>16580</ObjectId>
+      <ColNames>title_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="68" parent="25" name="titles_pkey">
+      <ObjectId>16581</ObjectId>
+      <ColNames>title_id</ColNames>
+      <UnderlyingIndexName>titles_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="69" parent="26" name="title_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43751</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="70" parent="26" name="genre_id">
+      <Position>2</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>43751</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <index id="71" parent="26" name="titles_genres_pkey">
+      <ObjectId>16585</ObjectId>
+      <ColNames>title_id
+genre_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="26" name="titles_genres_pkey">
+      <ObjectId>16586</ObjectId>
+      <ColNames>title_id
+genre_id</ColNames>
+      <UnderlyingIndexName>titles_genres_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="73" parent="27" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>52896</StateNumber>
       <DefaultExpression>nextval(&apos;movies.userinfo_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
       <SequenceName>movies.userinfo_id_seq</SequenceName>
     </column>
-    <column id="58" parent="26" name="username">
+    <column id="74" parent="27" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
@@ -349,7 +465,7 @@
       <DefaultExpression>&apos;maria25gr&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <column id="59" parent="26" name="forename">
+    <column id="75" parent="27" name="forename">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
@@ -357,7 +473,7 @@
       <DefaultExpression>&apos;John&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <column id="60" parent="26" name="lastname">
+    <column id="76" parent="27" name="lastname">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
@@ -365,7 +481,7 @@
       <DefaultExpression>&apos;Snow&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
-    <column id="61" parent="26" name="male">
+    <column id="77" parent="27" name="male">
       <Position>5</Position>
       <DataType>boolean|0</DataType>
       <NotNull>1</NotNull>
@@ -373,7 +489,7 @@
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
-    <column id="62" parent="26" name="birth">
+    <column id="78" parent="27" name="birth">
       <Position>6</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -381,7 +497,7 @@
       <DefaultExpression>1552071233</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="63" parent="26" name="joined">
+    <column id="79" parent="27" name="joined">
       <Position>7</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -389,7 +505,7 @@
       <DefaultExpression>1552071233</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="64" parent="26" name="fav_genre">
+    <column id="80" parent="27" name="fav_genre">
       <Position>8</Position>
       <DataType>smallint|0</DataType>
       <NotNull>1</NotNull>
@@ -397,7 +513,7 @@
       <DefaultExpression>1</DefaultExpression>
       <TypeId>21</TypeId>
     </column>
-    <foreign-key id="65" parent="26" name="userinfo_username_fk">
+    <foreign-key id="81" parent="27" name="userinfo_username_fk">
       <ObjectId>16450</ObjectId>
       <ColNames>username</ColNames>
       <RefTableId>16417</RefTableId>
@@ -405,6 +521,17 @@
       <RefTableName>credentials</RefTableName>
       <RefKeyName>credentials_pkey</RefKeyName>
       <RefColNames>username</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="82" parent="27" name="userinfo_fav_genre_fkey">
+      <ObjectId>16604</ObjectId>
+      <ColNames>fav_genre</ColNames>
+      <RefTableId>16552</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>genres</RefTableName>
+      <RefKeyName>genres_pkey</RefKeyName>
+      <RefColNames>genre_id</RefColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
